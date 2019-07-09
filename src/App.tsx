@@ -10,7 +10,7 @@ const App: FC = () => {
   const decrement2 = () => setCount(previousCount => previousCount - 1);
 
   const reset = () => setCount(0);
-  const double = () => setCount(previousCount => previousCount * 2);
+  const double = () => setCount(count * 2);
   const devide3 = () =>
     setCount(previousCount =>
       previousCount % 3 === 0 ? previousCount / 3 : previousCount
