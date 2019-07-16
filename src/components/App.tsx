@@ -1,14 +1,24 @@
-import React, { useState, useReducer, MouseEvent } from "react";
+import React, { useState, useReducer, MouseEvent, FC } from "react";
+import Event from "./Event";
 import reducer from "../reducers";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = () => {
+const App: FC = () => {
   const [state, dispatch] = useReducer(reducer, []);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const addEvent = (event: MouseEvent<HTMLButtonElement>): void => {
+
+  const defaultAction = {
+    type: "",
+    id: 0,
+    title: "",
+    body: ""
+  };
+
+  const addEvent = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     dispatch({
+      ...defaultAction,
       type: "CREATE_EVENT",
       title,
       body
@@ -16,6 +26,15 @@ const App = () => {
     setTitle("");
     setBody("");
   };
+
+  const deleteAllEvents = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    dispatch({
+      ...defaultAction,
+      type: "DELETE_ALL_EVENTS"
+    });
+  };
+
   return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -44,7 +63,9 @@ const App = () => {
         <button className="btn btn-primary" onClick={addEvent}>
           イベントを作成する
         </button>
-        <button className="btn btn-danger">全てのイベントを削除する</button>
+        <button className="btn btn-danger" onClick={deleteAllEvents}>
+          全てのイベントを削除する
+        </button>
       </form>
 
       <h4>イベント一覧</h4>
@@ -57,7 +78,16 @@ const App = () => {
             <th />
           </tr>
         </thead>
-        <tbody />
+        <tbody>
+          {state.map(
+            (
+              event: { id: number; title: string; body: string },
+              index: number
+            ) => {
+              return <Event key={index} event={event} dispatch={dispatch} />;
+            }
+          )}
+        </tbody>
       </table>
     </div>
   );

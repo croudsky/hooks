@@ -1,12 +1,12 @@
-interface state {
+export interface IState {
   id: number;
   title: string;
   body: string;
 }
 
 const events = (
-  state: Array<state> = [],
-  action: { type: string; title: string; body: string }
+  state: Array<IState> = [],
+  action: { type: string; title: string; body: string; id: number }
 ) => {
   switch (action.type) {
     case "CREATE_EVENT":
@@ -15,7 +15,7 @@ const events = (
       let id = length === 0 ? 1 : state[length - 1].id + 1;
       return [...state, { id, ...event }];
     case "DELETE_EVENT":
-      return state;
+      return state.filter(event => event.id !== action.id);
     case "DELETE_ALL_EVENTS":
       return [];
     default:
