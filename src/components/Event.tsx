@@ -6,7 +6,12 @@ const Event: FC<{
   dispatch: any;
 }> = ({ event = { id: 0, title: "", body: "" }, dispatch }) => {
   const handleClickDeleteButton = () => {
-    dispatch({ type: "DELETE_EVENT", ...event });
+    const result = window.confirm(
+      `イベント(id=${event.id})を本当に削除してもいいですか?`
+    );
+    if (result) {
+      dispatch({ type: "DELETE_EVENT", ...event });
+    }
   };
   return (
     <tr>

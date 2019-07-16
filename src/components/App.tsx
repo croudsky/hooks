@@ -29,11 +29,20 @@ const App: FC = () => {
 
   const deleteAllEvents = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    dispatch({
-      ...defaultAction,
-      type: "DELETE_ALL_EVENTS"
-    });
+    const result = window.confirm(
+      "全てのイベントを本当に削除してもいいですか？"
+    );
+    if (result) {
+      dispatch({
+        ...defaultAction,
+        type: "DELETE_ALL_EVENTS"
+      });
+    }
   };
+
+  const unCreatable: boolean = title === "" || body === "";
+
+  const unAllDeletable: boolean = state.length === 0;
 
   return (
     <div className="container-fluid">
@@ -60,10 +69,18 @@ const App: FC = () => {
           />
         </div>
 
-        <button className="btn btn-primary" onClick={addEvent}>
+        <button
+          className="btn btn-primary"
+          onClick={addEvent}
+          disabled={unCreatable}
+        >
           イベントを作成する
         </button>
-        <button className="btn btn-danger" onClick={deleteAllEvents}>
+        <button
+          className="btn btn-danger"
+          onClick={deleteAllEvents}
+          disabled={unAllDeletable}
+        >
           全てのイベントを削除する
         </button>
       </form>
