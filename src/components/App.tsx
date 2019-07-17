@@ -6,15 +6,17 @@ import reducer from '../reducers';
 import AppContext from '../contexts/AppContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const APP_KEY = 'appWithRedux';
+
 const App: FC = () => {
-  const appState = localStorage.getItem('appWithRedux');
+  const appState = localStorage.getItem(APP_KEY);
   const initialState = appState
     ? JSON.parse(appState)
     : { events: [], operationLogs: [] };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    localStorage.setItem('appWithRedux', JSON.stringify(state));
+    localStorage.setItem(APP_KEY, JSON.stringify(state));
   }, [state]);
 
   return (
