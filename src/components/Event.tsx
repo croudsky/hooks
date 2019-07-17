@@ -1,12 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { IState } from '../reducers';
 import { DELETE_EVENT } from '../actions';
+import AppContext from '../contexts/AppContext';
 
 const Event: FC<{
   event: IState;
-  dispatch: any;
-}> = ({ event = { id: 0, title: '', body: '' }, dispatch }) => {
+}> = ({ event = { id: 0, title: '', body: '' } }) => {
+  const { dispatch } = useContext(AppContext);
   const handleClickDeleteButton = () => {
+    // eslint-disable-next-line no-alert
     const result = window.confirm(
       `イベント(id=${event.id})を本当に削除してもいいですか?`,
     );

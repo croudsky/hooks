@@ -1,14 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import React, { Dispatch, FC, MouseEvent, useState } from 'react';
-import { IState } from '../reducers';
+import React, { FC, MouseEvent, useState, useContext } from 'react';
 import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions';
+import AppContext from '../contexts/AppContext';
 
-const EventForm: FC<{
-  state: IState[];
-  dispatch: Dispatch<{ type: string; title: string; body: string; id: number }>;
-}> = ({ state, dispatch }) => {
+const EventForm: FC = () => {
+  const { state, dispatch } = useContext(AppContext);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -53,7 +51,6 @@ const EventForm: FC<{
       <h4>イベント作成フォーム</h4>
       <form>
         <div className="form-group">
-          // eslint-disable-next-line jsx-a11y/label-has-associated-control
           <label htmlFor="formEventTitle">タイトル</label>
           <input
             className="form-control"

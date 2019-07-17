@@ -1,11 +1,10 @@
-import React, { Dispatch, FC } from 'react';
+import React, { FC, useContext } from 'react';
 import Event from './Event';
-import { IState } from '../reducers';
+import AppContext from '../contexts/AppContext';
 
-const Events: FC<{
-  state: IState[];
-  dispatch: Dispatch<{ type: string; title: string; body: string; id: number }>;
-}> = ({ state, dispatch }) => {
+const Events: FC = () => {
+  const { state } = useContext(AppContext);
+
   return (
     <>
       <h4>イベント一覧</h4>
@@ -24,7 +23,8 @@ const Events: FC<{
               event: { id: number; title: string; body: string },
               index: number,
             ) => {
-              return <Event key={index} event={event} dispatch={dispatch} />;
+              // eslint-disable-next-line react/no-array-index-key
+              return <Event key={index} event={event} />;
             },
           )}
         </tbody>
