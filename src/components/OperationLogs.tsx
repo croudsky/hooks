@@ -12,8 +12,8 @@ const OperationLogs: FC = () => {
       <table className="table table-hover">
         <thead>
           <tr>
-            <th>操作内容</th>
-            <th>操作日時</th>
+            <th>内容</th>
+            <th>日時</th>
             <th />
           </tr>
         </thead>
