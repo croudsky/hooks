@@ -1,5 +1,6 @@
 import React, { Dispatch, FC, MouseEvent, useState } from "react";
 import { IState } from "../reducers";
+import { CREATE_EVENT, DELETE_ALL_EVENTS } from "../actions";
 
 const EventForm: FC<{
   state: IState[];
@@ -19,7 +20,7 @@ const EventForm: FC<{
     event.preventDefault();
     dispatch({
       ...defaultAction,
-      type: "CREATE_EVENT",
+      type: CREATE_EVENT,
       title,
       body
     });
@@ -35,7 +36,7 @@ const EventForm: FC<{
     if (result) {
       dispatch({
         ...defaultAction,
-        type: "DELETE_ALL_EVENTS"
+        type: DELETE_ALL_EVENTS
       });
     }
   };

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { IState } from "../reducers";
+import { DELETE_EVENT } from "../actions";
 
 const Event: FC<{
   event: IState;
@@ -9,8 +10,9 @@ const Event: FC<{
     const result = window.confirm(
       `イベント(id=${event.id})を本当に削除してもいいですか?`
     );
+
     if (result) {
-      dispatch({ type: "DELETE_EVENT", ...event });
+      dispatch({ type: DELETE_EVENT, ...event });
     }
   };
   return (
