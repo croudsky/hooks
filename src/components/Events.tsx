@@ -18,7 +18,7 @@ const Events: FC = () => {
           </tr>
         </thead>
         <tbody>
-          {state.map(
+          {state.events.map(
             (
               event: { id: number; title: string; body: string },
               index: number,

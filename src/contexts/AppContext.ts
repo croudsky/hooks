@@ -8,7 +8,7 @@ const initialDispatch: Dispatch<{
 }> = (): void => {};
 
 const AppContext = createContext({
-  state: [{ id: 0, title: '', body: '' }],
+  state: { events: [{ id: 0, title: '', body: '' }] },
   // eslint-disable-next-line no-undef
   dispatch: initialDispatch,
 });

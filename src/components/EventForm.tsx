@@ -44,7 +44,7 @@ const EventForm: FC = () => {
   };
 
   const unCreatable: boolean = title === '' || body === '';
-  const unAllDeletable: boolean = state.length === 0;
+  const unAllDeletable: boolean = state.events.length === 0;
 
   return (
     <>

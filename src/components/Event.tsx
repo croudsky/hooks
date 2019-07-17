@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { IState } from '../reducers';
+import { IState } from '../interfaces';
 import { DELETE_EVENT } from '../actions';
 import AppContext from '../contexts/AppContext';
 
