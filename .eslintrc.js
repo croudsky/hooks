@@ -3,145 +3,144 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    "jest/globals": true
+    'jest/globals': true,
   },
   extends: [
-    "airbnb",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/errors",
-    "plugin:import/warnings",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    'airbnb',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:prettier/recommended',
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
   ],
   globals: {
-    Atomics: "readonly",
-    cy: "readonly",
-    Cypress: "readonly",
-    SharedArrayBuffer: "readonly",
-    __DEV__: true
+    Atomics: 'readonly',
+    cy: 'readonly',
+    Cypress: 'readonly',
+    SharedArrayBuffer: 'readonly',
+    __DEV__: true,
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
-    project: "./tsconfig.json",
-    sourceType: "module"
+    project: './tsconfig.json',
+    sourceType: 'module',
   },
   plugins: [
-    "@typescript-eslint",
-    "jest",
-    "prettier",
-    "prefer-arrow",
-    "react",
-    "react-hooks"
+    '@typescript-eslint',
+    'jest',
+    'prettier',
+    'prefer-arrow',
+    'react',
+    'react-hooks',
   ],
   root: true,
   settings: {
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", "jsx", ".ts", ".tsx"]
-      }
+        extensions: ['.js', 'jsx', '.ts', '.tsx'],
+      },
     },
     react: {
-      version: "detect"
-    }
+      version: 'detect',
+    },
   },
   rules: {
     // eslint official
-    "newline-before-return": "error",
-    "no-console": "warn",
-    "require-yield": "error",
+    'newline-before-return': 'error',
+    'no-console': 'warn',
+    'require-yield': 'error',
 
     // @typescript-eslint
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-member-accessibility": "off",
-    indent: "off",
-    "@typescript-eslint/indent": "off",
-    "@typescript-eslint/no-unnecessary-type-assertion": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/indent': 'off',
+    '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
       {
-        varsIgnorePattern: "[Rr]eact"
-      }
+        varsIgnorePattern: '[Rr]eact',
+      },
     ],
     // Should be removed after merged https://github.com/typescript-eslint/typescript-eslint/pull/390
-    "@typescript-eslint/no-object-literal-type-assertion": "off",
+    '@typescript-eslint/no-object-literal-type-assertion': 'off',
 
     // prefer-arrow
-    "prefer-arrow/prefer-arrow-functions": [
-      "error",
+    'prefer-arrow/prefer-arrow-functions': [
+      'error',
       {
         disallowPrototype: true,
         singleReturnOnly: true,
-        classPropertiesAllowed: false
-      }
+        classPropertiesAllowed: false,
+      },
     ],
 
     // react
-    "react/jsx-filename-extension": [
-      "error",
+    'react/jsx-filename-extension': [
+      'error',
       {
-        extensions: ["jsx", "tsx"]
-      }
+        extensions: ['jsx', 'tsx'],
+      },
     ],
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "react/prop-types": "off",
-    "react/prefer-stateless-function": "off",
+    'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'react/prop-types': 'off',
+    'react/prefer-stateless-function': 'off',
 
     // react hooks
-    "react-hooks/rules-of-hooks": "error",
+    'react-hooks/rules-of-hooks': 'error',
 
     // import
-    "import/extensions": [
-      "error",
-      "always",
+    'import/extensions': [
+      'error',
+      'always',
       {
-        js: "never",
-        jsx: "never",
-        ts: "never",
-        tsx: "never"
-      }
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
+    'import/no-extraneous-dependencies': [
+      'error',
       {
         devDependencies: [
-          ".storybook/**",
-          "stories/**",
-          "**/*/*.story.*",
-          "**/*/*.stories.*",
-          "**/__specs__/**",
-          "**/*/*.spec.*",
-          "**/__tests__/**",
-          "**/*/*.test.*",
-          "src/setupTests.*"
-        ]
-      }
+          '.storybook/**',
+          'stories/**',
+          '**/*/*.story.*',
+          '**/*/*.stories.*',
+          '**/__specs__/**',
+          '**/*/*.spec.*',
+          '**/__tests__/**',
+          '**/*/*.test.*',
+          'src/setupTests.*',
+        ],
+      },
     ],
-    "import/prefer-default-export": "off",
+    'import/prefer-default-export': 'off',
 
     // Redux Devtools Extention
-    "no-underscore-dangle": [
-      "error",
-      { allow: ["__REDUX_DEVTOOLS_EXTENSION__"] }
+    'no-underscore-dangle': [
+      'error',
+      { allow: ['__REDUX_DEVTOOLS_EXTENSION__'] },
     ],
 
     // prettier
-    "prettier/prettier": [
-      "error",
+    'prettier/prettier': [
+      'error',
       {
         bracketSpacing: true,
         printWidth: 80,
         semi: true,
         singleQuote: true,
-        trailingComma: "all",
-        useTabs: false
-      }
-    ]
-  }
+        trailingComma: 'all',
+        useTabs: false,
+      },
+    ],
+  },
 };
