@@ -1,6 +1,6 @@
-import React, { Dispatch, FC } from "react";
-import Event from "./Event";
-import { IState } from "../reducers";
+import React, { Dispatch, FC } from 'react';
+import Event from './Event';
+import { IState } from '../reducers';
 
 const Events: FC<{
   state: IState[];
@@ -22,10 +22,10 @@ const Events: FC<{
           {state.map(
             (
               event: { id: number; title: string; body: string },
-              index: number
+              index: number,
             ) => {
               return <Event key={index} event={event} dispatch={dispatch} />;
-            }
+            },
           )}
         </tbody>
       </table>

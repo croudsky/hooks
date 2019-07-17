@@ -1,8 +1,8 @@
-import React, { useReducer, FC } from "react";
-import EventForm from "./EventForm";
-import Events from "./Events";
-import reducer from "../reducers";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useReducer, FC } from 'react';
+import EventForm from './EventForm';
+import Events from './Events';
+import reducer from '../reducers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: FC = () => {
   const [state, dispatch] = useReducer(reducer, []);
