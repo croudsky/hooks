@@ -1,13 +1,7 @@
 import { createContext, Dispatch } from 'react';
+import { IAction } from '../interfaces';
 
-const initialDispatch: Dispatch<{
-  type: string;
-  title: string;
-  body: string;
-  id: number;
-  description: string;
-  operatedAt: string;
-}> = (): void => {};
+const initialDispatch: Dispatch<IAction> = (): void => {};
 
 const AppContext = createContext({
   state: {

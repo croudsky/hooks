@@ -1,17 +1,7 @@
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from '../actions';
-import { IState } from '../interfaces';
+import { IState, IAction } from '../interfaces';
 
-const events = (
-  state: IState[] = [],
-  action: {
-    type: string;
-    title: string;
-    body: string;
-    id: number;
-    description: string;
-    operatedAt: string;
-  },
-) => {
+const events = (state: IState[] = [], action: IAction) => {
   switch (action.type) {
     case CREATE_EVENT: {
       const postEvent = { title: action.title, body: action.body };

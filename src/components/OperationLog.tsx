@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+import { IStateOperation } from '../interfaces';
 
 const Event: FC<{
-  operationLog: { description: string; operatedAt: string };
+  operationLog: IStateOperation;
 }> = ({ operationLog = { description: '', operatedAt: '' } }) => (
   <tr>
     <td>{operationLog.description}</td>

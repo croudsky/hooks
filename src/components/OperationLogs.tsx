@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React, { FC, useContext } from 'react';
 import OperationLog from './OperationLog';
 import AppContext from '../contexts/AppContext';
