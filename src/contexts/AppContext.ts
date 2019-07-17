@@ -5,10 +5,15 @@ const initialDispatch: Dispatch<{
   title: string;
   body: string;
   id: number;
+  description: string;
+  operatedAt: string;
 }> = (): void => {};
 
 const AppContext = createContext({
-  state: { events: [{ id: 0, title: '', body: '' }] },
+  state: {
+    events: [{ id: 0, title: '', body: '' }],
+    operationLogs: [{ description: '', operatedAt: '' }],
+  },
   // eslint-disable-next-line no-undef
   dispatch: initialDispatch,
 });

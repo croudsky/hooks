@@ -3,7 +3,14 @@ import { IState } from '../interfaces';
 
 const events = (
   state: IState[] = [],
-  action: { type: string; title: string; body: string; id: number },
+  action: {
+    type: string;
+    title: string;
+    body: string;
+    id: number;
+    description: string;
+    operatedAt: string;
+  },
 ) => {
   switch (action.type) {
     case CREATE_EVENT: {

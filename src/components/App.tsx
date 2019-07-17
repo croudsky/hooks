@@ -6,7 +6,7 @@ import AppContext from '../contexts/AppContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App: FC = () => {
-  const initialState = { events: [] };
+  const initialState = { events: [], operationLogs: [] };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
