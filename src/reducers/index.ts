@@ -1,5 +1,6 @@
 import { CREATE_EVENT, DELETE_EVENT, DELETE_ALL_EVENTS } from '../actions';
 
+// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 export interface IState {
   id: number;
   title: string;
