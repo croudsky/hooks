@@ -14,7 +14,6 @@ const OperationLogs: FC = () => {
           <tr>
             <th>内容</th>
             <th>日時</th>
-            <th />
           </tr>
         </thead>
         <tbody>
